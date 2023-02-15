@@ -11,4 +11,8 @@ echo -e "\n${yellow}Executing pre-commit hook...${no_color}\n"
 FILES_PATTERN='\.(jsx?|tsx?)(\..+)?$'
 FORBIDDEN='console\.[clear|dir|log|info|warn|error]'
 
+#execute lint-staged script
+exec >/dev/tty 2>&1
+
+npx lint-staged
 
